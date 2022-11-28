@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Art/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" type="Texture" id=1]
 [ext_resource path="res://Art/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" type="Texture" id=2]
@@ -6,18 +6,12 @@
 [ext_resource path="res://Art/tiles/newtileset.png" type="Texture" id=4]
 [ext_resource path="res://Art/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" type="Texture" id=5]
 [ext_resource path="res://Art/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" type="Texture" id=6]
+[ext_resource path="res://Sound/Overworld Theme.mp3" type="AudioStream" id=7]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/win.gd" type="Script" id=9]
 [ext_resource path="res://scripts/death.gd" type="Script" id=10]
-[ext_resource path="res://Art/theme/theme.tres" type="Theme" id=11]
-[ext_resource path="res://Art/coin placeholder.png" type="Texture" id=12]
-[ext_resource path="res://Art/label_bg.png" type="Texture" id=13]
-[ext_resource path="res://Art/lives.png" type="Texture" id=14]
-[ext_resource path="res://scripts/Scores.gd" type="Script" id=15]
-[ext_resource path="res://Levels/1uplabel.gd" type="Script" id=17]
-[ext_resource path="res://Levels/Labelpoints.gd" type="Script" id=18]
-[ext_resource path="res://Levels/test.gd" type="Script" id=19]
-[ext_resource path="res://PixelFont-L.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/warparea/Warp.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Art/tiles/questionblock.png" type="Texture" id=21]
 [ext_resource path="res://Levels/replacer.gd" type="Script" id=22]
 
@@ -664,9 +658,6 @@ extents = Vector2( 80, 440 )
 [sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 2e+06, 2e+07 )
 
-[sub_resource type="DynamicFont" id=34]
-font_data = ExtResource( 20 )
-
 [sub_resource type="ConvexPolygonShape2D" id=35]
 points = PoolVector2Array( 40, 40, 0, 40, 0, 0, 40, 0 )
 
@@ -745,10 +736,23 @@ resource_local_to_scene = true
 3/shape_one_way_margin = 0.0
 3/shapes = [  ]
 3/z_index = 0
+4/name = "questionblock.png 4"
+4/texture = ExtResource( 21 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 80, 40, 40 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 6, 120 )
-script = ExtResource( 19 )
 
 [node name="PlatformerController2D" parent="." instance=ExtResource( 8 )]
 position = Vector2( 154, 560 )
@@ -881,157 +885,7 @@ __meta__ = {
 position = Vector2( 2e+06, 4 )
 shape = SubResource( 33 )
 
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="Coins" type="NinePatchRect" parent="HUD"]
-margin_top = 40.0
-margin_right = 120.0
-margin_bottom = 80.0
-rect_min_size = Vector2( 120, 0 )
-rect_pivot_offset = Vector2( 120, 40 )
-texture = ExtResource( 13 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="HUD/Coins"]
-margin_right = 40.0
-margin_bottom = 40.0
-theme = ExtResource( 11 )
-text = "0"
-align = 1
-valign = 1
-script = ExtResource( 15 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="HUD/Coins"]
-margin_left = 80.0
-margin_top = -40.0
-margin_right = 160.0
-margin_bottom = 40.0
-texture = ExtResource( 12 )
-stretch_mode = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="HUD/Coins"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -80.0
-margin_top = -20.0
-margin_right = -40.0
-margin_bottom = 20.0
-theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 34 )
-text = "Coins"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="health" type="NinePatchRect" parent="HUD"]
-margin_left = 160.0
-margin_top = 40.0
-margin_right = 280.0
-margin_bottom = 80.0
-rect_min_size = Vector2( 120, 0 )
-rect_pivot_offset = Vector2( -160, 20 )
-texture = ExtResource( 13 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="HUD/health"]
-margin_right = 40.0
-margin_bottom = 40.0
-theme = ExtResource( 11 )
-text = "0"
-align = 1
-valign = 1
-script = ExtResource( 17 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="HUD/health"]
-margin_left = 80.0
-margin_top = -40.0
-margin_right = 120.0
-rect_scale = Vector2( 2, 2 )
-texture = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="HUD/health"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -80.0
-margin_top = -20.0
-margin_right = -40.0
-margin_bottom = 20.0
-theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 34 )
-text = "Lives"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="health2" type="NinePatchRect" parent="HUD"]
-margin_left = 320.0
-margin_top = 40.0
-margin_right = 440.0
-margin_bottom = 80.0
-rect_min_size = Vector2( 120, 0 )
-texture = ExtResource( 13 )
-axis_stretch_horizontal = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="HUD/health2"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -80.0
-margin_top = -20.0
-margin_bottom = 20.0
-theme = ExtResource( 11 )
-custom_fonts/font = SubResource( 34 )
-text = "Score"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Points" type="Label" parent="HUD/health2"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_top = -20.0
-margin_right = 40.0
-margin_bottom = 20.0
-theme = ExtResource( 11 )
-text = "0"
-align = 1
-valign = 1
-script = ExtResource( 18 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="HUD" parent="." instance=ExtResource( 11 )]
 
 [node name="BlocksWithScripts" type="TileMap" parent="."]
 position = Vector2( -6, 0 )
@@ -1041,8 +895,15 @@ cell_quadrant_size = 40
 collision_layer = 8
 collision_mask = 15
 format = 1
-tile_data = PoolIntArray( 20, 0, 0, 68, 1, 0, 69, 1, 0, 70, 1, 0, 71, 1, 0, 72, 1, 0, 73, 1, 0, 74, 1, 0, 75, 1, 0, 79, 1, 0, 80, 1, 0, 81, 1, 0, 82, 0, 0, 96, 0, 0, 65644, 1, 0, 65645, 1, 0, 65646, 1, 0, 65647, 1, 0, 65652, 1, 0, 65653, 0, 0, 65654, 0, 0, 65655, 1, 0, 262160, 0, 0, 262162, 1, 0, 262163, 3, 0, 262164, 1, 0, 262165, 0, 0, 262166, 1, 0, 262209, 1, 0, 262210, 0, 0, 262211, 1, 0, 262226, 1, 0, 262231, 1, 0, 262232, 1, 0, 262237, 0, 0, 262240, 0, 0, 262243, 0, 0, 262249, 1, 0, 262261, 1, 0, 262262, 1, 0, 262300, 1, 0, 262301, 1, 0, 262302, 0, 0, 262303, 1, 0, 458770, 2, 0 )
+tile_data = PoolIntArray( -65468, 2, 0, -65466, 2, 0, 20, 0, 0, 68, 1, 0, 69, 1, 0, 70, 1, 0, 71, 1, 0, 72, 1, 0, 73, 1, 0, 74, 1, 0, 75, 1, 0, 79, 1, 0, 80, 1, 0, 81, 1, 0, 82, 0, 0, 96, 0, 0, 65644, 1, 0, 65645, 1, 0, 65646, 1, 0, 65647, 1, 0, 65652, 1, 0, 65653, 0, 0, 65654, 0, 0, 65655, 1, 0, 262160, 0, 0, 262162, 1, 0, 262163, 3, 0, 262164, 1, 0, 262165, 4, 0, 262166, 1, 0, 262209, 1, 0, 262210, 0, 0, 262211, 1, 0, 262226, 1, 0, 262231, 1, 0, 262232, 1, 0, 262237, 0, 0, 262240, 0, 0, 262243, 0, 0, 262249, 1, 0, 262261, 1, 0, 262262, 1, 0, 262300, 1, 0, 262301, 1, 0, 262302, 0, 0, 262303, 1, 0, 458770, 2, 0, 458780, 2, 0, 458793, 2, 0, 458794, 2, 0, 458839, 2, 0, 458840, 2, 0, 458866, 2, 0, 458867, 2, 0, 458869, 2, 0, 458870, 2, 0, 458934, 2, 0, 458935, 2, 0 )
 script = ExtResource( 22 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="Warp" parent="." instance=ExtResource( 12 )]
+position = Vector2( 150, 304 )
 
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="win" to="win" method="_on_win_body_entered"]

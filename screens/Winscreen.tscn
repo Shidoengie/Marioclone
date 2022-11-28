@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Art/theme/font/S#.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Art/theme/bigfont.tres" type="Theme" id=1]
+[ext_resource path="res://PixelFont-L.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 64
-font_data = ExtResource( 1 )
+size = 128
+font_data = ExtResource( 2 )
 
 [node name="Winscreen" type="Control"]
 anchor_right = 1.0
@@ -24,8 +25,9 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 1 )
 custom_fonts/font = SubResource( 1 )
-text = "You win"
+text = "You win !"
 align = 1
 valign = 1
 __meta__ = {

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Overworld Theme.mp3-45730adea3be1c48b5a8d80b9ce419a0.mp3str"
+
+[deps]
+
+source_file="res://Sound/Overworld Theme.mp3"
+dest_files=[ "res://.import/Overworld Theme.mp3-45730adea3be1c48b5a8d80b9ce419a0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

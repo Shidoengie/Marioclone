@@ -1,0 +1,158 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://PixelFont-L.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/Scores.gd" type="Script" id=2]
+[ext_resource path="res://Levels/1uplabel.gd" type="Script" id=3]
+[ext_resource path="res://Levels/Labelpoints.gd" type="Script" id=4]
+[ext_resource path="res://Art/label_bg.png" type="Texture" id=5]
+[ext_resource path="res://Art/coin placeholder.png" type="Texture" id=6]
+[ext_resource path="res://Art/lives.png" type="Texture" id=7]
+[ext_resource path="res://Art/theme/theme.tres" type="Theme" id=8]
+
+[sub_resource type="DynamicFont" id=34]
+font_data = ExtResource( 1 )
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Coins" type="NinePatchRect" parent="."]
+margin_top = 40.0
+margin_right = 120.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 120, 0 )
+rect_pivot_offset = Vector2( 120, 40 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Coins"]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 8 )
+text = "0"
+align = 1
+valign = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Coins"]
+margin_left = 80.0
+margin_top = -40.0
+margin_right = 160.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Coins"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -20.0
+margin_right = -40.0
+margin_bottom = 20.0
+theme = ExtResource( 8 )
+custom_fonts/font = SubResource( 34 )
+text = "Coins"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="health" type="NinePatchRect" parent="."]
+margin_left = 160.0
+margin_top = 40.0
+margin_right = 280.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 120, 0 )
+rect_pivot_offset = Vector2( -160, 20 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="health"]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 8 )
+text = "0"
+align = 1
+valign = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="health"]
+margin_left = 80.0
+margin_top = -40.0
+margin_right = 120.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="health"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -20.0
+margin_right = -40.0
+margin_bottom = 20.0
+theme = ExtResource( 8 )
+custom_fonts/font = SubResource( 34 )
+text = "Lives"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="health2" type="NinePatchRect" parent="."]
+margin_left = 320.0
+margin_top = 40.0
+margin_right = 440.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 120, 0 )
+texture = ExtResource( 5 )
+axis_stretch_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="health2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -20.0
+margin_bottom = 20.0
+theme = ExtResource( 8 )
+custom_fonts/font = SubResource( 34 )
+text = "Score"
+align = 1
+valign = 1
+
+[node name="Points" type="Label" parent="health2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -20.0
+margin_right = 40.0
+margin_bottom = 20.0
+theme = ExtResource( 8 )
+text = "0"
+align = 1
+valign = 1
+script = ExtResource( 4 )

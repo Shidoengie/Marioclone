@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/jumpi.mp3-f30f55e0b18771af8b209403bcc9ee24.mp3str"
+
+[deps]
+
+source_file="res://Art/sound/jumpi.mp3"
+dest_files=[ "res://.import/jumpi.mp3-f30f55e0b18771af8b209403bcc9ee24.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

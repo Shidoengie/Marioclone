@@ -1,5 +1,0 @@
-extends Area2D
-func _on_Area2D_body_entered(body):
-	if body.name == "PlatformerController2D":
-		Global.lives += 1
-		queue_free()
