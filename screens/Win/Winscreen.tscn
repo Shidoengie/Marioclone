@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Art/theme/bigfont.tres" type="Theme" id=1]
 [ext_resource path="res://PixelFont-L.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://screens/Win/Winscreen.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -10,9 +11,7 @@ font_data = ExtResource( 2 )
 [node name="Winscreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -33,3 +32,17 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -43.0
+margin_top = -136.0
+margin_right = 39.0
+margin_bottom = -100.0
+theme = ExtResource( 1 )
+text = "Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

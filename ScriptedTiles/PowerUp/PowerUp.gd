@@ -14,5 +14,5 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.name == "PlatformerController2D":
-		Global.lives += 1
+		Global.powerup = true
 		queue_free()

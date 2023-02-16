@@ -16,6 +16,7 @@ func _physics_process(delta):
 
 func _on_Area2D_body_exited(body):
 	if body.name == "PlatformerController2D":
+		velocity = Vector2.ZERO
 		Global.coins += 1
 		Global.points += 200
 		queue_free()

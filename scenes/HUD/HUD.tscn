@@ -1,41 +1,37 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://PixelFont-L.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://scripts/Scores.gd" type="Script" id=2]
-[ext_resource path="res://Levels/1uplabel.gd" type="Script" id=3]
-[ext_resource path="res://Levels/Labelpoints.gd" type="Script" id=4]
-[ext_resource path="res://Art/label_bg.png" type="Texture" id=5]
+[ext_resource path="res://Art/theme/hud_panel.tres" type="StyleBox" id=5]
 [ext_resource path="res://Art/coin placeholder.png" type="Texture" id=6]
 [ext_resource path="res://Art/lives.png" type="Texture" id=7]
 [ext_resource path="res://Art/theme/theme.tres" type="Theme" id=8]
+[ext_resource path="res://scenes/HUD/HUD.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=34]
 font_data = ExtResource( 1 )
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource( 9 )
 
-[node name="Coins" type="NinePatchRect" parent="."]
+[node name="Coins" type="Panel" parent="."]
 margin_top = 40.0
 margin_right = 120.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 120, 0 )
 rect_pivot_offset = Vector2( 120, 40 )
-texture = ExtResource( 5 )
+custom_styles/panel = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Label" type="Label" parent="Coins"]
+[node name="CoinLabel" type="Label" parent="Coins"]
+unique_name_in_owner = true
 margin_right = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 8 )
 text = "0"
 align = 1
 valign = 1
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="Coins"]
 margin_left = 80.0
@@ -66,27 +62,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="health" type="NinePatchRect" parent="."]
+[node name="health" type="Panel" parent="."]
 margin_left = 160.0
 margin_top = 40.0
 margin_right = 280.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 120, 0 )
 rect_pivot_offset = Vector2( -160, 20 )
-texture = ExtResource( 5 )
+custom_styles/panel = ExtResource( 5 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
+"_edit_group_": true
 }
 
-[node name="Label" type="Label" parent="health"]
+[node name="oneuplabel" type="Label" parent="health"]
+unique_name_in_owner = true
 margin_right = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 8 )
 text = "0"
 align = 1
 valign = 1
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -119,17 +114,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="health2" type="NinePatchRect" parent="."]
+[node name="health2" type="Panel" parent="."]
 margin_left = 320.0
 margin_top = 40.0
 margin_right = 440.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 120, 0 )
-texture = ExtResource( 5 )
-axis_stretch_horizontal = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_styles/panel = ExtResource( 5 )
 
 [node name="Label2" type="Label" parent="health2"]
 anchor_left = 1.0
@@ -146,6 +137,7 @@ align = 1
 valign = 1
 
 [node name="Points" type="Label" parent="health2"]
+unique_name_in_owner = true
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -20.0
@@ -155,4 +147,3 @@ theme = ExtResource( 8 )
 text = "0"
 align = 1
 valign = 1
-script = ExtResource( 4 )

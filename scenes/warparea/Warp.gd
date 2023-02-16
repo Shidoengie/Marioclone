@@ -1,6 +1,6 @@
 extends Area2D
 
-export var scene : String
+export var scene : PackedScene
 var player : KinematicBody2D
 var canenter = false
 # Declare member variables here. Examples:
@@ -15,7 +15,7 @@ func _ready():
 
 func _process(delta):
 	if(Input.is_action_just_pressed("duck")) and canenter:
-		get_tree().change_scene(scene)
+		get_tree().change_scene(scene.resource_path)
 
 func _on_Warp_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if(body != player):

@@ -4,11 +4,11 @@ var hit = false
 var obj 
 
 func _on_Area2D_body_entered(body):
-		if body.name == "PlatformerController2D" and not hit:
-			anim = "qblockbop"
-			_anim()
-			hit = true
-			_spawn()
+	if body.name == "PlatformerController2D" and not hit:
+		anim = "qblockbop"
+		_anim()
+		hit = true
+		_spawn()
 func _spawn():
 	var instance = obj.instance()
 	instance.position = position
