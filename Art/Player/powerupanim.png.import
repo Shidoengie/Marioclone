@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hover.png-c53bd2d0f037979ff41ff3c2f91605dc.stex"
+path="res://.import/powerupanim.png-6d2395ca2a39c2b2be828674daf03f31.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/buttons/hover.png"
-dest_files=[ "res://.import/hover.png-c53bd2d0f037979ff41ff3c2f91605dc.stex" ]
+source_file="res://Art/Player/powerupanim.png"
+dest_files=[ "res://.import/powerupanim.png-6d2395ca2a39c2b2be828674daf03f31.stex" ]
 
 [params]
 

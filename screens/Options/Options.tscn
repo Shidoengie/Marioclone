@@ -50,6 +50,7 @@ __meta__ = {
 }
 
 [node name="DevspeedCheckBox" type="CheckBox" parent="Panel/VBoxContainer2/Devspeed"]
+unique_name_in_owner = true
 margin_right = 168.0
 margin_bottom = 38.0
 theme = ExtResource( 3 )
@@ -81,6 +82,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SecretButton" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 65.0
+margin_right = 28.0
+margin_bottom = 103.0
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+
 [connection signal="ready" from="." to="." method="_on_Control_ready"]
 [connection signal="toggled" from="Panel/VBoxContainer2/Devspeed/DevspeedCheckBox" to="." method="_on_DevspeedCheckBox_toggled"]
 [connection signal="pressed" from="HBoxContainer2/ReturnButton" to="." method="_on_ReturnButton_pressed"]
+[connection signal="pressed" from="SecretButton" to="." method="_on_SecretButton_pressed"]
