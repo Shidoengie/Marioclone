@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/death.png-6a1cbf65566b1092a75bbe66a1fbff6e.stex"
+path="res://.import/powerup.png-d319b7297914b470a1e597532eeca923.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Player/death.png"
-dest_files=[ "res://.import/death.png-6a1cbf65566b1092a75bbe66a1fbff6e.stex" ]
+source_file="res://ScriptedTiles/PowerUp/powerup.png"
+dest_files=[ "res://.import/powerup.png-d319b7297914b470a1e597532eeca923.stex" ]
 
 [params]
 

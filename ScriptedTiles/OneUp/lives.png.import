@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coin placeholder.png-ef05c85e52ecf8b64ede2cc27e93b026.stex"
+path="res://.import/lives.png-a7f5d0bd95ad8a22918f98c1d73f89af.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/coin placeholder.png"
-dest_files=[ "res://.import/coin placeholder.png-ef05c85e52ecf8b64ede2cc27e93b026.stex" ]
+source_file="res://ScriptedTiles/OneUp/lives.png"
+dest_files=[ "res://.import/lives.png-a7f5d0bd95ad8a22918f98c1d73f89af.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

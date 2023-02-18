@@ -1,12 +1,91 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scenes/Player/newcontroller.gd" type="Script" id=1]
-[ext_resource path="res://Art/Player/jumpanim.png" type="Texture" id=2]
-[ext_resource path="res://Art/Player/walkanim.png" type="Texture" id=3]
-[ext_resource path="res://Art/Player/player-Sheet.png" type="Texture" id=4]
-[ext_resource path="res://Art/Player/death.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Player/Assets/jumpanim.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Player/Assets/walkanim.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Player/Assets/player-Sheet.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Player/Assets/death.png" type="Texture" id=5]
 [ext_resource path="res://Sound/jump.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Sound/death.mp3" type="AudioStream" id=7]
+[ext_resource path="res://scenes/Player/Assets/powerupanim.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=8]
+resource_name = "Big_RESET"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Player:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Player:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Player:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CollisionShape2D:shape:extents")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12, 20 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Big_Walk"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D:shape:extents")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12, 20 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Jump"
@@ -46,6 +125,124 @@ tracks/2/keys = {
 "update": 1,
 "values": [ ExtResource( 2 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:shape:extents")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12, 20 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "PowerDown"
+length = 0.2
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Player:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Player:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 1, 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:shape:extents")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12, 20 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "PowerUp"
+length = 0.2
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Player:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Player:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:shape:extents")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12, 20 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 tracks/0/type = "value"
@@ -83,6 +280,42 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 2 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Player:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Player:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CollisionShape2D:shape:extents")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12, 20 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -124,6 +357,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [ ExtResource( 3 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:shape:extents")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12, 20 ) ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "death"
@@ -163,6 +408,30 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Player:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CollisionShape2D:shape:extents")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12, 20 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -204,17 +473,100 @@ tracks/2/keys = {
 "update": 1,
 "values": [ 2 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:shape:extents")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12, 20 ) ]
+}
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 10, 20 )
+extents = Vector2( 12, 20 )
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "Big_RESET"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "Big_Walk"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "Jump"
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "PowerDown"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "PowerUp"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "RESET"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=20]
+states/Big_RESET/node = SubResource( 11 )
+states/Big_RESET/position = Vector2( 160, 31 )
+states/Big_Walk/node = SubResource( 12 )
+states/Big_Walk/position = Vector2( 160, 117 )
+states/Jump/node = SubResource( 13 )
+states/Jump/position = Vector2( 607, 128 )
+states/PowerDown/node = SubResource( 23 )
+states/PowerDown/position = Vector2( 333.695, 117 )
+states/PowerUp/node = SubResource( 14 )
+states/PowerUp/position = Vector2( 362, 31 )
+states/RESET/node = SubResource( 15 )
+states/RESET/position = Vector2( 607, 31 )
+states/death/node = SubResource( 16 )
+states/death/position = Vector2( 792, 128 )
+transitions = [ "PowerUp", "Big_RESET", SubResource( 17 ), "RESET", "PowerUp", SubResource( 18 ), "PowerUp", "RESET", SubResource( 19 ), "PowerDown", "RESET", SubResource( 24 ), "Big_RESET", "PowerDown", SubResource( 25 ), "Big_RESET", "Big_Walk", SubResource( 26 ), "RESET", "Jump", SubResource( 27 ), "Jump", "RESET", SubResource( 28 ), "Jump", "death", SubResource( 29 ), "RESET", "death", SubResource( 30 ) ]
+graph_offset = Vector2( -241.305, -107 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=21]
 
 [node name="PlatformerController2D" type="KinematicBody2D"]
-position = Vector2( 104, 588 )
+position = Vector2( 104, 223 )
 collision_mask = 0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -40, -400 )
 current = true
 limit_top = -1
 limit_bottom = 1
@@ -222,21 +574,24 @@ drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Big_RESET = SubResource( 8 )
+anims/Big_Walk = SubResource( 9 )
 anims/Jump = SubResource( 2 )
+anims/PowerDown = SubResource( 22 )
+anims/PowerUp = SubResource( 10 )
 anims/RESET = SubResource( 3 )
 anims/Walk = SubResource( 4 )
 anims/death = SubResource( 7 )
 anims/player = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -60, -260 )
 shape = SubResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Player" type="Sprite" parent="."]
-position = Vector2( -60, -260 )
+position = Vector2( 0, -20 )
 texture = ExtResource( 4 )
 hframes = 2
 
@@ -245,5 +600,11 @@ stream = ExtResource( 6 )
 
 [node name="deathsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 20 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 21 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

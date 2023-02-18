@@ -2,10 +2,11 @@
 
 [ext_resource path="res://PixelFont-L.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Art/theme/hud_panel.tres" type="StyleBox" id=5]
-[ext_resource path="res://Art/coin placeholder.png" type="Texture" id=6]
-[ext_resource path="res://Art/lives.png" type="Texture" id=7]
+[ext_resource path="res://ScriptedTiles/Coins/coin placeholder.png" type="Texture" id=6]
+[ext_resource path="res://ScriptedTiles/OneUp/lives.png" type="Texture" id=7]
 [ext_resource path="res://Art/theme/theme.tres" type="Theme" id=8]
 [ext_resource path="res://scenes/HUD/HUD.gd" type="Script" id=9]
+
 
 [sub_resource type="DynamicFont" id=34]
 font_data = ExtResource( 1 )

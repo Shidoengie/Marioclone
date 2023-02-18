@@ -35,8 +35,8 @@ func _on_Area2D2_body_entered(body):
 	if body.name == "PlatformerController2D" and not Global.dead and body.velocity.y > 0:
 		anim = "squash"
 		is_squashed = true
-		$KillArea.monitoring = false
-		$SquashArea.monitoring = false
+		$KillArea.set_deferred("monitoring",false)
+		$SquashArea.set_deferred("monitoring",false)
 		Global.points += 100
 		$Timer.start()
 func _on_Timer_timeout():

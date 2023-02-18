@@ -14,8 +14,6 @@ const animDict = {
 }
 var anim = animDict.RESET
 var velocity = Vector2.ZERO
-func _ready():
-	print("aaaa")
 func _physics_process(delta):
 	velocity.y += delta * gravity
 	if not Global.dead:
@@ -23,30 +21,27 @@ func _physics_process(delta):
 	_anim()
 	
 	$Player.scale.y = 1.5 if Global.powerup else 1
-func _controler():
+func _moveX():
+	walk_speed = run_speed if Input.is_action_pressed("run") else base_walkSpeed
+	if Input.is_action_pressed("move_right"):
+		velocity.x = walk_speed
+		$Player.flip_h = false
+		return
 	if Input.is_action_pressed("move_left"):
 		velocity.x = -walk_speed
 		$Player.flip_h = true
-		
-	elif Input.is_action_pressed("move_right"):
-		velocity.x = walk_speed
-		$Player.flip_h = false
-	else:
-		velocity.x = lerp(velocity.x, 0, 0.5)
+		return
+	velocity.x = lerp(velocity.x, 0, 0.5)
+func _controler():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = -jump_force
 		$jumpsound.play()
+	_moveX()
 	velocity = move_and_slide(velocity, Vector2.UP)
-	
-	if not Input.is_action_pressed("run"):
-		walk_speed = base_walkSpeed
-		return
 	if Global.devspeed:
 		walk_speed += run_speed
 		return
-	walk_speed = run_speed
-	
-	
+
 func _anim():
 	
 	if Global.dead:

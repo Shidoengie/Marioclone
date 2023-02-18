@@ -756,7 +756,7 @@ position = Vector2( 6, 120 )
 script = ExtResource( 12 )
 
 [node name="PlatformerController2D" parent="." instance=ExtResource( 15 )]
-position = Vector2( 156, 560 )
+position = Vector2( 156, 297 )
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2( -5, -160 )

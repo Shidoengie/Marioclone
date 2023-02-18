@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/powerup.png-19e10de3155ce3edaa7acf912b6727f9.stex"
+path="res://.import/player-Sheet.png-57ee7c59fd230996a8d5d7139faa46fa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/items/powerup.png"
-dest_files=[ "res://.import/powerup.png-19e10de3155ce3edaa7acf912b6727f9.stex" ]
+source_file="res://scenes/Player/Assets/player-Sheet.png"
+dest_files=[ "res://.import/player-Sheet.png-57ee7c59fd230996a8d5d7139faa46fa.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

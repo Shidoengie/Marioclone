@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walkanim.png-61b0d184afa049114fe50e1429af3136.stex"
+path="res://.import/jumpanim.png-e0d09f91aa81066b6350ef20cd5af1a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Player/walkanim.png"
-dest_files=[ "res://.import/walkanim.png-61b0d184afa049114fe50e1429af3136.stex" ]
+source_file="res://scenes/Player/Assets/jumpanim.png"
+dest_files=[ "res://.import/jumpanim.png-e0d09f91aa81066b6350ef20cd5af1a7.stex" ]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ScriptedTiles/OneUp/Oneup.gd" type="Script" id=2]
-[ext_resource path="res://Art/lives.png" type="Texture" id=3]
+[ext_resource path="res://ScriptedTiles/OneUp/lives.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 20 )
